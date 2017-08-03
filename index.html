@@ -43,10 +43,14 @@
         fillOpacity: 0.8
       };
 
+      var bigfootIcon = L.icon({
+        iconUrl: 'big_foot_orange.png',
+        iconSize:     [15, 25], // size of the icon
+      });
       //create the geojson layer
       var geojson = L.geoJson(null,{
         pointToLayer: function (feature, latlng) {
-          return L.circleMarker(latlng, geojsonMarkerOptions);
+          return L.marker(latlng, {icon: bigfootIcon})
         }
       }).addTo(map);
 
